@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+        <style type="text/css">
+            label{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <label> Enter first number:</label>
+        <input type="text" id="n1"/>
+        <label> Enter second number:</label>
+        <input type="text" id="n2"/><br><br>
+        <select id="operators" onchange="calculate()">
+            <option disabled="disabled" selected="selected">Select Operator</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br><br>
+
+        <script>
+            function calculate()
+            {
+                var firstNumber = parseFloat(document.getElementById('n1').value);
+                var secondNumber = parseFloat(document.getElementById('n2').value);
+
+                var oper = document.getElementById('operators').value;
+
+                if(oper == '+')
+                {
+                    document.getElementById('result').value=
+                            firstNumber + secondNumber;
+                }
+
+                if(oper == '-')
+                {
+                    document.getElementById('result').value=
+                            firstNumber - secondNumber;
+                }
+
+                if(oper == '*')
+                {
+                    document.getElementById('result').value=
+                            firstNumber * secondNumber;
+                }
+
+                if(oper == '/')
+                {
+                    document.getElementById('result').value=
+                            firstNumber / secondNumber;
+                }
+            }
+        </script>
+
+
+        <label> Result:</label>
+        <input type="text" id="result"/>
+
+    </body>
+</html>
